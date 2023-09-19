@@ -1,0 +1,21 @@
+.ant-layout-content {
+	&.protected {
+		background-color: transparent;
+		padding: 10px;
+		margin-top: 50px;
+	}
+}
+
+.ant-layout {
+	background-color: transparent;
+}
+
+button {
+	box-shadow: none !important;
+	font-size: medium !important;
+}
+
+label {
+	font-weight: bold;
+	color: $gray !important;
+}

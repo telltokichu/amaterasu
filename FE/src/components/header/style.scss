@@ -1,0 +1,17 @@
+header {
+    position: fixed;
+    z-index: 10;
+    height: 50px !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10px !important;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    background: $white !important;
+
+    .logo {
+        width: 150px;
+        cursor: pointer;
+    }
+}

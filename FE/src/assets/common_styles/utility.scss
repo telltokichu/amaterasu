@@ -1,0 +1,48 @@
+$totalSpace: 2;
+$totalValues: 7;
+
+$directions: x, y, r, l, b, t;
+$types-long: ('margin', 'padding');
+$types-short: ('m', 'p');
+
+@mixin spaces {
+    @for $j from 0 to $totalSpace {
+        @for $i from 0 to $totalValues {
+            @each $direction in $directions {
+                @if $direction == x {
+                    .#{nth($types-short, $j+1)}#{$direction}-#{$i} {
+                        #{nth($types-long, $j+1)}-left: $i * 5px !important;
+                        #{nth($types-long, $j+1)}-right: $i * 5px !important;
+                    }
+                } @else if $direction == y {
+                    .#{nth($types-short, $j+1)}#{$direction}-#{$i} {
+                        #{nth($types-long, $j+1)}-top: $i * 5px !important;
+                        #{nth($types-long, $j+1)}-bottom: $i * 5px !important;
+                    }
+                } @else if $direction == r {
+                    .#{nth($types-short, $j+1)}#{$direction}-#{$i} {
+                        #{nth($types-long, $j+1)}-right: $i * 5px !important;
+                    }
+                } @else if $direction == l {
+                    .#{nth($types-short, $j+1)}#{$direction}-#{$i} {
+                        #{nth($types-long, $j+1)}-left: $i * 5px !important;
+                    }
+                } @else if $direction == b {
+                    .#{nth($types-short, $j+1)}#{$direction}-#{$i} {
+                        #{nth($types-long, $j+1)}-bottom: $i * 5px !important;
+                    }
+                } @else if $direction == t {
+                    .#{nth($types-short, $j+1)}#{$direction}-#{$i} {
+                        #{nth($types-long, $j+1)}-top: $i * 5px !important;
+                    }
+                }
+            }
+
+            .#{nth($types-short, $j+1)}-#{$i} {
+                #{nth($types-long, $j+1)}: $i * 5px !important;
+            }
+        }
+    }
+}
+
+@include spaces;
